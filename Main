@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+      int opcao;
+      Scanner entrada = new Scanner(System.in);
+      System.out.println("Entre as 3 questões. Selecione a questão desejada:");
+      opcao = entrada.nextInt();
+      
+      switch (opcao){
+        case 1:
+        Ex_1.ex_1();
+          break;
+        case 2:
+          Ex_2.ex_2();
+          break;
+        case 3:
+          Ex_3.realizar_exercicio3();
+      }
+    }
+}
