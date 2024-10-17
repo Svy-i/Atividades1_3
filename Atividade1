@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+class Ex_1 {
+    public static void ex_1 () {
+        Scanner scanner = new Scanner(System.in);
+        
+        String[] matriculas = new String[100];
+        double[] notas = new double[100];
+        
+        for (int i = 0; i < 4; i++) {
+            System.out.print("Digite o número de matrícula do aluno " + (i + 1) + ": ");
+            matriculas[i] = scanner.nextLine();
+            System.out.print("Digite a nota do aluno " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+            scanner.nextLine();
+        }
+        double maiorNota1 = Double.MIN_VALUE;
+        double maiorNota2 = Double.MIN_VALUE;
+        String matricula1 = "";
+        String matricula2 = "";
+        
+        for (int i = 0; i < 4; i++) {
+            if (notas[i] > maiorNota1) {
+                maiorNota2 = maiorNota1;
+                matricula2 = matricula1;
+                maiorNota1 = notas[i];
+                matricula1 = matriculas[i];
+            } else if (notas[i] > maiorNota2) {
+                maiorNota2 = notas[i];
+                matricula2 = matriculas[i];
+            }
+        }
+        System.out.println("\nAs duas maiores notas são:");
+        System.out.println("1ª Maior Nota: " + maiorNota1 + " - Matrícula: " + matricula1);
+        System.out.println("2ª Maior Nota: " + maiorNota2 + " - Matrícula: " + matricula2);
+        
+        scanner.close();
+    }
+}
