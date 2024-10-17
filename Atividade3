@@ -1,0 +1,59 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+class Ex_3 {
+  private int tempoContribuicao;
+  private int idade;
+  private int pontuacaoMinima;
+  private int sexo;
+  private int pontuacaoObtida;
+  
+  
+  
+  public static void realizar_exercicio3() {
+    int ano = 2019;
+    Scanner entrada = new Scanner(System.in);
+    System.out.print("Informe o sexo (1 - Feminino, 2 - Masculino): ");
+    int sexo = entrada.nextInt();
+    
+    System.out.print("Informe o tempo de contribuição em 2019 (em anos): ");
+    int tempoContribuicao = entrada.nextInt();
+    
+    System.out.print("Informe a idade em 2019: ");
+    int idade = entrada.nextInt();
+    
+   
+      if (sexo == 1){
+        int pontuacaoMinima = 86;
+          for (int contador = 0; contador <= 14; contador++){
+          System.out.println("A sua pontuação mínima é de " + pontuacaoMinima + " no ano de " + ano);
+          pontuacaoMinima = pontuacaoMinima + 1;
+          ano++;
+          }
+      }
+        if (sexo == 2){
+          int pontuacaoMinima = 96;
+          for (int contador = 0; contador <= 9; contador++){
+          System.out.println("A sua pontuação mínima é de " + pontuacaoMinima + " no ano de " + ano);
+          pontuacaoMinima = pontuacaoMinima + 1;
+          ano++;
+          }
+        }
+    System.out.print("\n\n");
+    int pontuacaoObtida = tempoContribuicao + idade;
+    if (sexo == 1){
+      ano = 2019;
+      while (pontuacaoObtida <= 100){
+        System.out.println("A sua pontuação é de " + pontuacaoObtida + " no ano de " + ano);
+        pontuacaoObtida = pontuacaoObtida + 2;
+        ano = ano + 1;
+      } 
+    } else if (sexo == 2){
+      ano = 2019;
+      while (pontuacaoObtida <= 105){
+        System.out.println("A sua pontuação obtida é de " + pontuacaoObtida + " no ano de " + ano);
+        pontuacaoObtida = pontuacaoObtida + 2;
+        ano = ano + 1;
+      }
+    }
+  }
+}
